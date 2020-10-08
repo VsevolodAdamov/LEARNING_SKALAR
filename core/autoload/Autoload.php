@@ -1,6 +1,6 @@
 <?php
 
-namespace autoload;
+namespace core\autoload;
 
 class Autoload {
     

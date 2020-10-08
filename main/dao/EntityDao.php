@@ -1,6 +1,6 @@
 <?php
 
-namespace dao;
+namespace main\dao;
 
 interface EntityDao {
     

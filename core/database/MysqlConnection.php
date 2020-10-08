@@ -1,6 +1,6 @@
 <?php
 
-namespace database;
+namespace core\database;
 
 class MysqlConnection implements Connection{
     

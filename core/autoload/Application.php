@@ -1,12 +1,14 @@
 <?php
 
-namespace autoload;
+namespace core\autoload;
 
-use routes\Route;
+use core\routes\Route;
+use core\database\SourceConnect;
+use configs\Consts;
 
 class Application {
     
-        private static $instance;
+    private static $instance;
     
     private function __construct(){
         
@@ -21,8 +23,11 @@ class Application {
     }
     
     public function run(){
-        (Autoload::getInstance())->register();
+        SourceConnect::connect();
+        
         $isRun = (Route::getInstance())->routing();
+        
+        SourceConnect::close();
         
         if(!$isRun){
             echo "error 404";
